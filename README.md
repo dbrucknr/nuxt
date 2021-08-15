@@ -17,6 +17,10 @@ $ npm run start
 $ npm run generate
 ```
 
+## Create PostgreSQL Database
+
+To create a local DB, type ```createdb dashboard``` - assumes you already have postgres installed via Homebrew, or the PostgreSQL App.
+
 For detailed explanation on how things work, check out the [documentation](https://nuxtjs.org).
 
 ## Special Directories
