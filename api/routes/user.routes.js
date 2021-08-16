@@ -1,19 +1,23 @@
 module.exports = app => {
+    const authMiddleware = require('../middleware/auth.middleware');
     const users = require("../controllers/user.controller");
     const router = require("express").Router();
 
     // See specific user
-    router.get("/:id", users.findOne);
-    // See all users
-    router.get("/", users.findAll);
+    router.get("/:id", authMiddleware, users.findOne);
+
     // Search all users
-    router.get("/:searchText", users.search)
+    router.post("/search", authMiddleware, users.search)
+
+    // See all users
+    router.get("/", authMiddleware, users.findAll);
+    
     // Update specifc user
-    router.put("/:id", users.update);
+    router.put("/:id", authMiddleware, users.update);
     // Delete specific user
-    router.delete("/:id", users.delete);
+    router.delete("/:id", authMiddleware, users.delete);
     // Delete all users
-    router.delete("/", users.deleteAll);
+    router.delete("/", authMiddleware, users.deleteAll);
 
     app.use('/users', router);
 }
