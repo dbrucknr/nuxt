@@ -1,3 +1,3 @@
 <template>
-  <tutorial />
+    <login-form />
 </template>

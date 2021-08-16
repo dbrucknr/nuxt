@@ -107,15 +107,20 @@ export default {
           to: '/inspire'
         },
         {
-          icon: 'mdi-minus',
-          title: 'Tutorial',
-          to: '/tutorial'
+          icon: 'mdi-account',
+          title: 'Users',
+          to: '/users'
+        },
+        {
+          icon: 'mdi-login-variant',
+          title: 'Login',
+          to: '/login'
         }
       ],
       miniVariant: false,
       right: true,
       rightDrawer: false,
-      title: 'Vuetify.js'
+      title: 'Dashboard'
     }
   }
 }
