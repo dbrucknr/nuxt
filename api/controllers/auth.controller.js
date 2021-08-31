@@ -1,7 +1,6 @@
 const db = require("../models");
 const User = db.users;
 const jwt = require('jsonwebtoken');
-// const Op = db.Sequelize.Op;
 
 exports.signup = async (req, res) => {
     try {
@@ -46,7 +45,7 @@ exports.login = async (req, res) => {
             { expiresIn : "2d" },
             (err, token) => {
                 if (err) { throw err; }
-                res.status(200).json(token);
+                res.status(200).json({ token: token, user: user });
             }
         );
     } catch (error) {

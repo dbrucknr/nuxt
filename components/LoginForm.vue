@@ -61,7 +61,8 @@ export default {
         }),
         formatLogin() {
             console.log('Test')
-            this.login({ email: this.email, password: this.password })
+            this.login({ email: this.email, password: this.password });
+            this.$router.push('/');
         }
     }
 }
